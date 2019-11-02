@@ -1,0 +1,38 @@
+{
+  "name": "enterprise-interface",
+  "version": "1.0.0",
+  "description": "interface server",
+  "main": "app.js",
+  "repository": "**",
+  "author": "jz",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.10.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "koa2-cors": "^2.0.6"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.0.51",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa-router": "^7.0.42",
+    "@types/node": "^10.15.3",
+    "@typescript-eslint/eslint-plugin": "^2.5.0",
+    "@typescript-eslint/parser": "^2.5.0",
+    "@types/koa2-cors": "^2.0.1",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "nodemon": "^1.19.4",
+    "pm2": "^3.5.0",
+    "prettier": "^1.18.2",
+    "ts-node": "^8.4.1",
+    "tsconfig-paths": "^3.8.0",
+    "typescript": "^3.6.4"
+  },
+  "scripts": {
+    "start": "nodemon --watch './src/**/*' -e ts,tsx --exec cross-env ts-node ./src/app.ts",
+    "build": "rd /s/q dist && tsc",
+    "server": "pm2 start dist/app.js"
+  }
+}
